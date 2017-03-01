@@ -1,0 +1,116 @@
+<!Doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="SampleApp">
+    <head>
+        <meta charset="utf-8">
+        <title>The dresses</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/main.min.css">
+    
+    <link rel="stylesheet" href="css/vendor.min.css">
+
+    <script src="js/vendor.min.js"></script>
+
+    <script>
+        var app = angular.module("SampleApp", []);
+
+        app.controller("SampleAppCtrl", function ($scope) {
+            $scope.showElem1 = false;
+            $scope.showElem2 = false;
+            $scope.showElem3 = false;
+            $scope.showElem4 = false;
+           
+        });
+    </script>
+     </head>
+    
+    <body ng-controller="SampleAppCtrl">
+        <div class="inner-body">
+       <div class="checkbox">
+        <input type="checkbox" ng-model="hideElem1" /> Show Element 1<br />
+        <input type="checkbox" ng-model="hideElem2" /> Show Element 2<br />
+        <input type="checkbox" ng-model="hideElem3" /> Show Element 3<br />
+        <input type="checkbox" ng-model="hideElem4" /> Show Element 4<br> 
+    </div>
+
+    <div class="header ">
+        <h3>щоб побачить ще щось, постав галочки в чекбокс..
+            Можеш вибрати відразу всі пункти або ж заховати скільки заманеться.
+            Angular
+        </h3>
+    </div>
+
+    <div id="d1" ng-show="hideElem1">
+            <div class="inner-div well">
+                <h4>Ідемо далі.Тепер тисни<br>
+                і тисни ще раз щоб заховати<br>
+                jQuery</h4>
+                <a href="#" class="btn btn-primary btn-lg active" role="button" 
+                onclick="openbox('box'); return false">сюди</a>
+            </div>
+    </div>
+
+    <div id="d2" ng-show="hideElem2">
+         <div class="inner-div well">
+                <h4>тисни</h4>
+                <a href="http://geniuscarrier.com/ng-toggle-in-angularjs/" class="btn btn-primary btn-lg active"
+                 role="button" onclick="openbox('box1'); return false">тут</a>
+        </div>
+    </div>
+    
+    <div id="d3" ng-show="hideElem3">
+        <div class="inner-div well">
+                <h4>тисни кнопку</h4>
+                <a href="#" class="btn btn-danger btn-lg active" role="button"
+                onclick="openbox('box2'); return false">тут</a>
+        </div>
+    </div>
+
+    <div id="d4" ng-show="hideElem4">
+        <div class="inner-div well">
+                <h4>тисни кнопку</h4>
+                <button type="button" class="btn btn-danger btn-lg btn-block"
+                onclick="openbox('box3'); return false">тут</button>
+        </div>
+    </div>  
+
+    <div id="box">
+          <h3>Наведи курсор<br>
+           на ці слова.Sass,css</h3>
+          <h2>Ти чудова людина!
+          Як товї справи?..<br>
+          Добре чи дуже добре?)</h2>
+        
+     </div>
+    <div id="box1" style="margin-left: 220px">
+            <h3>Наведи курсор</h3>
+            <h2></h2>
+        
+    </div>
+    <div id="box2" style="margin-left: 520px">
+          <h3>Наведи курсор</h3>
+          <h2></h2>
+        
+    </div>
+    <div id="box3" style="margin-left: 840px">
+           <h3>Наведи курсор</h3>
+           <h2></h2>
+        
+     </div>
+    <script type="text/javascript">
+ 
+          function openbox(id){
+          display = document.getElementById(id).style.display;
+ 
+         if(display=='none'){
+                document.getElementById(id).style.display='block';
+         }else{
+                document.getElementById(id).style.display='none';
+            }
+            }
+    </script>
+
+        
+    </body>
+</html>
